@@ -1,0 +1,482 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=ks_c_5601-1987">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.fontstyle01
+	{mso-style-name:fontstyle01;
+	font-family:"Times New Roman",serif;
+	color:black;
+	font-weight:bold;
+	font-style:italic;}
+p.DOAN, li.DOAN, div.DOAN
+	{mso-style-name:_DOAN;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.25in;
+	line-height:150%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center'><span class=fontstyle01><span style='font-size:15.0pt;
+line-height:107%;font-style:normal'>Master Thesis</span></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center'><span class=fontstyle01><span style='font-size:20.0pt;
+line-height:107%;font-style:normal'>Speed Up Temporal Median Filter and Its
+Application in Background Estimation</span></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center'><span class=fontstyle01><span style='font-size:20.0pt;
+line-height:107%;font-style:normal'>&nbsp;</span></span></p>
+
+<p class=MsoNormal><b><span style='font-size:15.0pt;line-height:107%;
+font-family:"Times New Roman",serif;color:black'>Abstract</span></b></p>
+
+<p class=DOAN>Temporal median filter is well known for several fields, for
+examples, image processing and time series analysis. However, one of the
+limitation of this filter is the computation complexity. Several algorithms
+have been proposed recently to resolve this limitation. The proposed thesis’s
+objectives&nbsp; is&nbsp; to&nbsp; speed-up&nbsp; the&nbsp; filter&nbsp;
+using&nbsp; GPU&nbsp; (Graphics&nbsp; Processing&nbsp; Unit). The&nbsp;
+speeded-up temporal&nbsp; median&nbsp; filter&nbsp; will&nbsp; be&nbsp; also&nbsp;
+analyzed&nbsp; for&nbsp; background&nbsp; modelling&nbsp; problem&nbsp;
+in&nbsp; video surveillance. Expected results of thesis are a new technique for
+speeding-up the temporal median filter using GPU is proposed and it is faster
+than recently developed algorithms, the&nbsp; effectiveness&nbsp; of&nbsp;
+the&nbsp; proposed&nbsp; temporal&nbsp; median&nbsp; filter&nbsp; is&nbsp;
+analyzed&nbsp; for&nbsp; the background&nbsp; modelling&nbsp; problem to&nbsp;
+show&nbsp; features&nbsp; on&nbsp; computation&nbsp; time&nbsp; and&nbsp;
+on&nbsp; the accuracy.</p>
+
+<p class=MsoNormal><b><span style='font-size:15.0pt;line-height:107%;
+font-family:"Times New Roman",serif;color:black'>Results</span></b></p>
+
+<p class=DOAN>Thesis contributions: (1) Build proposed method on GPU faster
+than previous histogram-based method (2) Propose data ordering technique (3)
+Propose find median value on difference histogram (4) Accelerate better than
+OpenCV algorthms such as MOG, GMG, MOG2 on GPU</p>
+
+<p class=DOAN>From there, we can apply: Background subtraction with accuracy
+able to compare with OpenCV MOG2, Problems about time series data.</p>
+
+<p class=DOAN align=left style='margin:0in;margin-bottom:.0001pt;text-align:
+left;text-indent:0in'><b>Case Study 1: Comparison among improvements</b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr style='height:15.35pt'>
+  <td style='border:solid white 1.0pt;border-bottom:solid white 3.0pt;
+  background:#4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:15.35pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Index</span></b></p>
+  </td>
+  <td width=93 style='width:70.1pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:15.35pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Name</span></b></p>
+  </td>
+  <td width=369 style='width:276.4pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:15.35pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:20.45pt'>
+  <td valign=top style='border:solid white 1.0pt;border-top:none;background:
+  #4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>1</span></b></p>
+  </td>
+  <td width=93 valign=top style='width:70.1pt;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #D0D8E8;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_V0</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>No improvements</span></p>
+  </td>
+ </tr>
+ <tr style='height:20.45pt'>
+  <td valign=top style='border:solid white 1.0pt;border-top:none;background:
+  #4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>2</span></b></p>
+  </td>
+  <td width=93 valign=top style='width:70.1pt;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E9EDF4;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_V1</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Plus improvements about data structure and
+  code</span></p>
+  </td>
+ </tr>
+ <tr style='height:20.45pt'>
+  <td valign=top style='border:solid white 1.0pt;border-top:none;background:
+  #4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>3</span></b></p>
+  </td>
+  <td width=93 valign=top style='width:70.1pt;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #D0D8E8;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_V2</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Plus improvements about spatial locality by
+  data ordering</span></p>
+  </td>
+ </tr>
+ <tr style='height:20.45pt'>
+  <td valign=top style='border:solid white 1.0pt;border-top:none;background:
+  #4F81BD;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>4</span></b></p>
+  </td>
+  <td width=93 valign=top style='width:70.1pt;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E9EDF4;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_V3</span></p>
+  </td>
+  <td width=369 valign=top style='width:276.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.7pt 5.2pt 0in 5.2pt;height:20.45pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Plus pre-processing data</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><span
+class=fontstyle01><span style='font-size:20.0pt;line-height:107%;font-style:
+normal'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><span
+class=fontstyle01><span style='font-size:20.0pt;line-height:107%;font-style:
+normal'><img width=492 height=238 id="Picture 2"
+src="files/image001.png"></span></span></p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'>GPU_V3 is the
+best improvement of proposed method.</p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'>&nbsp;</p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'><b>Case Study
+2: The proposed method with the related algorithms</b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr style='height:23.05pt'>
+  <td width=75 style='width:56.2pt;border:solid white 1.0pt;border-bottom:solid white 3.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:23.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Index</span></b></p>
+  </td>
+  <td width=180 style='width:134.7pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:23.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Name</span></b></p>
+  </td>
+  <td width=284 style='width:212.65pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:23.05pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>1</span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.7pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>CPU_HUANG [7]</span></p>
+  </td>
+  <td width=284 valign=top style='width:212.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Huang’ et al. method on CPU</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>2</span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.7pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>CPU_HUNG&nbsp;&nbsp; [8]</span></p>
+  </td>
+  <td width=284 valign=top style='width:212.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Hung’ et al. method&nbsp; on CPU</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>3</span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.7pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>CPU_SACH&nbsp;&nbsp;&nbsp;&nbsp; [5]</span></p>
+  </td>
+  <td width=284 valign=top style='width:212.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Sach’ et al. method on CPU</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>4</span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.7pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_SACH</span></p>
+  </td>
+  <td width=284 valign=top style='width:212.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Sach’ et al. method on GPU</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>5</span></b></p>
+  </td>
+  <td width=180 valign=top style='width:134.7pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Proposed method</span></p>
+  </td>
+  <td width=284 valign=top style='width:212.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Proposed method on GPU</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=DOAN><b>&nbsp;</b></p>
+
+<p class=DOAN align=left style='text-align:left'><b><img width=578 height=280
+id="Picture 3" src="files/image002.png"></b></p>
+
+<p class=DOAN align=left style='text-align:left'>Proposed method has improves
+Sach’ et al. Algorithm on GPU.</p>
+
+<p class=DOAN>&nbsp;</p>
+
+<p class=DOAN align=left style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:left;text-indent:0in'><b><span lang=PT-BR>Case Study 2: The proposed
+method with the related algorithms</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr style='height:28.25pt'>
+  <td width=75 style='width:56.2pt;border:solid white 1.0pt;border-bottom:solid white 3.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:28.25pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Index</span></b></p>
+  </td>
+  <td width=197 style='width:147.65pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:28.25pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Name</span></b></p>
+  </td>
+  <td width=236 style='width:177.1pt;border-top:solid white 1.0pt;border-left:
+  none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:28.25pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>1</span></b></p>
+  </td>
+  <td width=197 valign=top style='width:147.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Proposed method</span></p>
+  </td>
+  <td width=236 valign=top style='width:177.1pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>Proposed method on GPU</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>3</span></b></p>
+  </td>
+  <td width=197 valign=top style='width:147.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_GMG</span></p>
+  </td>
+  <td width=236 valign=top style='width:177.1pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>OpenCV GMG</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>4</span></b></p>
+  </td>
+  <td width=197 valign=top style='width:147.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_MOG</span></p>
+  </td>
+  <td width=236 valign=top style='width:177.1pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#D0D8E8;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>OpenCV MOG</span></p>
+  </td>
+ </tr>
+ <tr style='height:21.2pt'>
+  <td width=75 valign=top style='width:56.2pt;border:solid white 1.0pt;
+  border-top:none;background:#4F81BD;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:115%'><b><span style='color:white'>5</span></b></p>
+  </td>
+  <td width=197 valign=top style='width:147.65pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>GPU_MOG2</span></p>
+  </td>
+  <td width=236 valign=top style='width:177.1pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#E9EDF4;padding:.75pt 5.4pt 0in 5.4pt;height:21.2pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  115%'><span style='color:black'>OpenCV MOG2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'><span
+style='color:white'><img width=530 height=276 id="Picture 4"
+src="files/image003.png"></span></p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'>The proposed
+method runs fast than GMG, MOG, MOG2 (algorithms in OpenCV for Background
+Subtraction).</p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'><b>&nbsp;</b></p>
+
+<p class=DOAN align=left style='text-align:left;text-indent:0in'><b>Case Study 3:
+The accuracy evaluation with OpenCV MOG2 (PSNR)</b></p>
+
+<p class=DOAN style='text-indent:0in'><img width=604 height=272 id="Picture 5"
+src="files/image004.png"></p>
+
+<p class=DOAN style='text-indent:0in'>In <span lang=PT-BR>some situations, proposed
+method is better OpenCV MOG2. In different situations, OpenCV MOG2 is better
+proposed method.</span></p>
+
+<p class=MsoNormal><span lang=PT-BR>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
