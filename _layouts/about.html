@@ -15,7 +15,7 @@ layout: default
     {% if page.profile %}
     <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
       {% if page.profile.image %}
-        <img class="img-fluid z-depth-1 rounded" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
+        <img class="img-fluid z-depth-1 rounded-circle" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
       {% endif %}
       {% if page.profile.address %}
         <div class="address">
@@ -47,4 +47,7 @@ layout: default
     {% endif %}
   </article>
 
-</div>
+  <div style="display: none;">
+  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=nP4jgDc_Vw0GDJnYfVciRUIglQkKZwo8Hb-a7arwLuE&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+  </div>
+ </div>

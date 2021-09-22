@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2019-11-09 15:59:00-0400
 inline: true
 ---
 
-A simple inline announcement.
+:3rd_place_medal: Korean Emotion Recognition Challenge 2019 ([KERC](https://www.kaggle.com/c/kerc)). Team **ADLER**.
