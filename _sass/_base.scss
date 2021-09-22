@@ -197,6 +197,8 @@ blockquote {
 
 .news table th {
   color: var(--global-text-color);
+  max-width:100%;
+  white-space:nowrap;
 }
 
 // Social (bottom)
