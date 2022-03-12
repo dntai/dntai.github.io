@@ -11,7 +11,7 @@
   Nhu-Tai  Do
 
 
-  | blog
+  | cv
 
 </title>
 <meta name="description" content="">
@@ -36,7 +36,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍🎓</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/cv/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -116,8 +116,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/publication/">
                 publication
@@ -129,9 +127,11 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/cv/">
                 cv
+                
+                <span class="sr-only">(current)</span>
                 
               </a>
           </li>
@@ -159,18 +159,29 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">
+<!--      <span class="font-weight-bold">Nhu-Tai</span>  Do -->
+    </h1>
+     <p class="desc"></p>
+  </header>
+
+  <article>
+      <div id="adobe-dc-view" style="width: 800px;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){
+		var adobeDCView = new AdobeDC.View({clientId: "69ede9ad42d4451f9947e591b93a597e", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "/assets/pdf/cv.pdf"}},
+			metaData:{fileName: "curriculum vitae.pdf"}
+		}, {embedMode: "IN_LINE"});
+	});
+</script>
 
 
-  <ul class="post-list">
-    
-  </ul>
-
-  
-
+  </article>
 
 </div>
 
