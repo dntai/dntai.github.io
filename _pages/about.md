@@ -6,7 +6,7 @@ description: Researcher at <a href="https://prlabjnu.github.io" target='_blank'>
 page_order: 1
 profile:
   align: right
-  image: ntdo2.png
+  image: ntdo3.png
   address:
 
 news: true  # includes a list of news items
